@@ -1,0 +1,26 @@
+{
+  "name": "crontab-manager",
+  "version": "1.0.0",
+  "description": "Mac 本地 Crontab 定时任务管理",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js"
+  },
+  "keywords": [
+    "crontab",
+    "cron",
+    "scheduler"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@koa/cors": "^5.0.0",
+    "@koa/router": "^10.1.1",
+    "cron-parser": "^4.9.0",
+    "dotenv": "^17.3.1",
+    "js-yaml": "^4.1.0",
+    "koa": "^2.15.0",
+    "koa-bodyparser": "^4.4.1",
+    "koa-static": "^5.0.0"
+  }
+}

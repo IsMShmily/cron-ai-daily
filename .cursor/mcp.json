@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "mcp-oss-server": {
+      "command": "node",
+      "args": ["/Users/shmily/Documents/win/web-h5/mcp-server/build/index.js"]
+    }
+  }
+}

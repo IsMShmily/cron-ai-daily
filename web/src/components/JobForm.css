@@ -1,0 +1,255 @@
+.job-form-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 100;
+  animation: overlayIn 0.2s ease-out;
+}
+
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.job-form-dialog {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  width: 100%;
+  max-width: 480px;
+  max-height: calc(100vh - 4rem);
+  overflow: auto;
+  animation: dialogIn 0.25s ease-out;
+}
+
+@keyframes dialogIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.job-form-dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem 0 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.job-form-close {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: color 0.15s, background 0.15s;
+}
+
+.job-form-close:hover {
+  color: var(--text);
+  background: var(--bg-hover);
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.job-form-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.job-form {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.job-form .form-row {
+  margin-bottom: 1rem;
+}
+
+.job-form label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.job-form input[type="text"],
+.job-form input[type="url"],
+.job-form input[type="number"],
+.job-form select,
+.job-form textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.job-form input:focus,
+.job-form select:focus,
+.job-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.job-form .font-mono {
+  font-family: var(--font-mono);
+}
+
+.job-form .form-row-check label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.job-form .form-row-check input[type="checkbox"] {
+  width: auto;
+}
+
+/* 执行时间：一行，左侧模式切换，右侧固定 时:分 */
+.form-row-schedule .schedule-input-row,
+.form-row-schedule .schedule-cron-input {
+  width: 100%;
+}
+
+.schedule-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.4rem 0.5rem 0.4rem 0.75rem;
+  min-height: 2.75rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.schedule-input-row:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+.schedule-mode-tabs {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.schedule-tab {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.8rem;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+}
+
+.schedule-tab:hover {
+  color: var(--text);
+  background: var(--bg-hover);
+}
+
+.schedule-tab.active {
+  color: var(--accent);
+  background: rgba(34, 197, 94, 0.12);
+}
+
+/* 时:分 固定到输入框尾部 */
+.schedule-time-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.schedule-select {
+  min-width: 3.75rem;
+  padding: 0.35rem 1.5rem 0.35rem 0.5rem;
+  background: var(--bg-hover);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 12 12' fill='none' stroke='%238b92a3' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M3 4.5 L6 7.5 L9 4.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.4rem center;
+  transition: background-color 0.15s;
+}
+
+.schedule-select:hover {
+  background-color: var(--border);
+}
+
+.schedule-select:focus {
+  outline: none;
+  border-color: var(--accent);
+  background-color: var(--bg-hover);
+}
+
+.schedule-time-sep {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+.schedule-cron-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.4rem 0.5rem;
+  background: transparent;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.schedule-cron-input:focus {
+  outline: none;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
