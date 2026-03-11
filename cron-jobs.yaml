@@ -1,7 +1,7 @@
 jobs:
   - id: git-daily-commits
     name: 每日 Git 提交汇总（今日）
-    schedule: 0 12 * * *
+    schedule: 20 18 * * *
     script: git-daily-commits.js
     args:
       repoPath: /Users/shmily/Documents/win/web-h5
